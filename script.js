@@ -34,7 +34,7 @@ function printResult() {
     const result = display.value;
     const description = document.getElementById('description').value;
     if (result) {
-        const printContent = `\n------88 SMASH------\n\n&nbsp;&nbsp;&nbsp;&nbsp;${description}\n\n\n\n&nbsp;&nbsp;TOTAL: R$ ${result}\n\n\n&nbsp;${new Date().toLocaleString('pt-BR')}\n----------------------`;
+        const printContent = `\n------TESTE------\n\n&nbsp;&nbsp;&nbsp;&nbsp;${description}\n\n\n\n&nbsp;&nbsp;TOTAL: R$ ${result}\n\n\n&nbsp;${new Date().toLocaleString('pt-BR')}\n----------------------`;
         
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
             const printWindow = window.open('', '_blank', 'width=300,height=200');
