@@ -1,4 +1,5 @@
 let display = document.getElementById('display');
+let description = document.getElementById('description');
 let currentInput = '';
 
 document.addEventListener('keydown', handleKeyboardInput);
@@ -33,9 +34,9 @@ function clearDisplay() {
 
 function printResult() {
     const result = display.value;
-    const description = document.getElementById('description').value;
+    const descriptionText = description.value;
     if (result) {
-        const printContent = `\n------PAUD'ARCO------\n\n\n&nbsp;&nbsp;&nbsp;&nbsp;${description}\n\n\n&nbsp;&nbsp;TOTAL: R$${result}\n\n\n${new Date().toLocaleString('pt-BR')}\n----------------------`;
+        const printContent = `\n------PAUD'ARCO------\n\n${descriptionText}\n\nTOTAL: R$ ${result}\n\n${new Date().toLocaleString('pt-BR')}\n----------------------`;
         
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
             const printWindow = window.open('', '_blank', 'width=300,height=200');
@@ -68,6 +69,9 @@ function handleKeyboardInput(event) {
     } else if (event.ctrlKey && (key === 'p' || key === 'P')) {
         printResult();
         event.preventDefault();
+    } else if (event.shiftKey && (key === 'w' || key === 'W')) {
+        clearDescription();
+        event.preventDefault(); // Impedir a ação padrão
     }
 }
 
@@ -78,4 +82,8 @@ function updateDisplay() {
 
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
+}
+
+function clearDescription() {
+    description.value = '';
 }
