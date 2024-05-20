@@ -18,7 +18,7 @@ body {
 .calculator {
     background-color: white;
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 360px;
 }
@@ -30,7 +30,7 @@ body {
     margin-bottom: 10px;
     font-size: 24px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px;
 }
 
@@ -47,7 +47,7 @@ button {
     font-size: 18px;
     border: none;
     background-color: #e0e0e0;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -106,4 +106,44 @@ button:last-of-type:hover {
     font-size: 0.85rem;
     margin: 0;
     padding: 0;
+}
+
+/*começo do dark mode*/
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+
+.calculator {
+    text-align: center;
+    border: 2px solid #ccc;
+}
+.description-input {
+    width: calc(100% - 10px);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    resize: vertical;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+body.dark-mode #toggleTheme {
+    background-image: url("img/apagada.png");
+}
+#toggleTheme {
+    width: 50px;
+    background-image: url("img/acesa.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: white;
+
+}
+
+body.dark-mode .calculator {
+    border-color: #000000;
+    border: 1.5px solid #d9d9d9;
 }

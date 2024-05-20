@@ -2,6 +2,7 @@ let display = document.getElementById('display');
 let currentInput = '';
 
 document.addEventListener('keydown', handleKeyboardInput);
+document.getElementById('toggleTheme').addEventListener('click', toggleTheme);
 
 function appendNumber(number) {
     currentInput += number;
@@ -68,4 +69,8 @@ function handleKeyboardInput(event) {
         printResult();
         event.preventDefault(); // Evita o comportamento padrão de abrir a janela de impressão do navegador
     }
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
 }
