@@ -71,7 +71,10 @@ function handleKeyboardInput(event) {
         event.preventDefault();
     } else if (event.shiftKey && (key === 'w' || key === 'W')) {
         clearDescription();
-        event.preventDefault(); // Impedir a ação padrão
+        event.preventDefault();
+    } else if (event.shiftKey && (key === 'd' || key === 'D')) {
+        selectDescription();
+        event.preventDefault();
     }
 }
 
@@ -86,4 +89,8 @@ function toggleTheme() {
 
 function clearDescription() {
     description.value = '';
+}
+
+function selectDescription() {
+    description.focus();
 }
