@@ -36,7 +36,7 @@ function printResult() {
     const result = display.value;
     const descriptionText = description.value;
     if (result) {
-        const printContent = `\n------PAUD'ARCO------\n\n${descriptionText}\n\nTOTAL: R$ ${result}\n\n${new Date().toLocaleString('pt-BR')}\n----------------------`;
+        const printContent = `\n------PAUD'ARCO------\n\n&nbsp&nbsp&nbsp&nbsp${descriptionText}\n\n&nbsp&nbsp&nbspTOTAL: R$${result}\n\n&nbsp${new Date().toLocaleString('pt-BR')}\n----------------------`;
         
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
             const printWindow = window.open('', '_blank', 'width=300,height=200');
