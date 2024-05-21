@@ -2,11 +2,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: #dadada;
     margin: 0;
     font-family: Arial, sans-serif;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
     min-width: 500px;
 }
