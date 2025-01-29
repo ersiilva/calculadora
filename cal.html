@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.cal.css">
+    <link rel="shortcut icon" href="img/icons8-calculadora-ios-17-outlined-16.png" type="image/x-icon">
+</head>
+<body class="img">
+    <div class="calculator-container">
+        <div class="calculator">
+            <a class="nome">Calculadora</a>
+            <!--
+            <button id="toggleTheme"></button>
+            -->
+            <input type="text" id="display" disabled placeholder="Adicione um valor aqui!             " style="font-size: 20px;" >
+            <div class="buttons">
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendOperator('+')">+</button>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendOperator('-')">-</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendOperator('*')">*</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendOperator('/')">/</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="clearDisplay()">C</button>
+            </div>
+        
+            <textarea id="description" placeholder="Adicione uma descrição para a impressão"></textarea>
+            
+            <button onclick="printResult()">Imprimir</button>
+            
+            <div class="calculadora"style="text-decoration: none;">Clique <a style="text-decoration: none;color: #c8ddff;" href="index.html" rel="next" target="_self" >Aqui
+           </a>para Etiqueta</div>
+
+            <h3 id="projeto">Feito com 
+                <b style="font-size: 15px; color: rgba(255, 0, 0, 0.7);
+                margin: 5px; align-items: center; "><ion-icon name="heart"></ion-icon></b>por
+                    <a style="margin-left: 5px;" rel="next" target="_self">
+                 @ersiilva </a><a style="margin-left: 5px;" href="" rel="next" target="_self">
+                 </a> </h3>
+                 <h3 id="projeto1">© 2025</h3>
+                 <!--ESC = Limpa o campo numerico-->
+                 <!--Shift + D = Seleciona o campo descrição-->
+                 <!--Shift + w = Limpa o campo descrição-->
+                 <!--Ctrl + P = Print resultado-->
+        </div>
+    </div>
+    <script src="script.cal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
