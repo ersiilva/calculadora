@@ -11,7 +11,7 @@
     <div class="calculator-container">
         <div class="calculator">
             <button id="toggleTheme"></button>
-            <input type="text" id="display" disabled>
+            <input type="text" id="display" disabled placeholder="Adicione os valores aqui!     " autofocus>
             <div class="buttons">
                 <button onclick="appendNumber('1')">1</button>
                 <button onclick="appendNumber('2')">2</button>
@@ -30,7 +30,7 @@
                 <button onclick="calculate()">=</button>
                 <button onclick="clearDisplay()">C</button>
             </div>
-            <textarea id="description" placeholder="Adicione uma descrição para a impressão"></textarea>
+            <textarea id="description" placeholder="Adicione uma descrição para a impressão!" ></textarea>
             <button onclick="printResult()">Imprimir</button>
             
             <h3 id="projeto">Feito com 
