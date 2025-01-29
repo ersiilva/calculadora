@@ -1,53 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Etiqueta</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/icons8-calculadora-ios-17-outlined-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/x-icon">
+    
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <button id="toggleTheme"></button>
-            <input type="text" id="display" disabled>
-            <div class="buttons">
-                <button onclick="appendNumber('1')">1</button>
-                <button onclick="appendNumber('2')">2</button>
-                <button onclick="appendNumber('3')">3</button>
-                <button onclick="appendOperator('+')">+</button>
-                <button onclick="appendNumber('4')">4</button>
-                <button onclick="appendNumber('5')">5</button>
-                <button onclick="appendNumber('6')">6</button>
-                <button onclick="appendOperator('-')">-</button>
-                <button onclick="appendNumber('7')">7</button>
-                <button onclick="appendNumber('8')">8</button>
-                <button onclick="appendNumber('9')">9</button>
-                <button onclick="appendOperator('*')">*</button>
-                <button onclick="appendNumber('0')">0</button>
-                <button onclick="appendOperator('/')">/</button>
-                <button onclick="calculate()">=</button>
-                <button onclick="clearDisplay()">C</button>
+        <div class="forme-container">
+            <h1>Crie sua Etiqueta</h1>
+            <div class="form-group">
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" id="productName" name="productName" placeholder="Digite o nome do produto" oninput="this.value = this.value.toUpperCase() "> <!-- Força letras maiúsculas ao digitar -->
             </div>
-            <textarea id="description" placeholder="Adicione uma descrição para a impressão"></textarea>
-            <button onclick="printResult()">Imprimir</button>
+            <div class="form-group">
+                <label for="manufactureDate">Data de Fabricação:</label>
+                <input type="date" id="manufactureDate" name="manufactureDate">
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Data de Validade:</label>
+                <input type="date" id="expiryDate" name="expiryDate">
+            </div>
+            <div class="form-group">
+                <label for="productWeight">Peso (Kg):</label>
+                <input type="number" id="productWeight" name="productWeight" placeholder="0,000">
+            </div>
+            <div><a Modelo mobile href="/indesx2.html"></a></div>
+            
+            <button onclick="printInfo()">Imprimir</button>
+            
+            <div class="calculadora">Clique <a style="text-decoration: NONE; color: #c8ddff;" href="cal.html" rel="next" target="_self" >AQUI
+            </a> para Calculadora</div>
             
             <h3 id="projeto">Feito com 
                 <b style="font-size: 15px; color: rgba(255, 0, 0, 0.7);
-                margin: 5px; align-items: center; "><ion-icon name="heart"></ion-icon></b>por
-                    <a style="margin-left: 5px;" rel="next" target="_self">
-                 @ersiilva </a><a style="margin-left: 5px;" href="" rel="next" target="_self">
-                 </a> </h3>
-                 <h3 id="projeto1">© 2025</h3>
-                 <!--ESC = Limpa o campo numerico-->
-                 <!--Shift + D = Seleciona o campo descrição-->
-                 <!--Shift + w = Limpa o campo descrição-->
-                 <!--Ctrl + P = Print resultado-->
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
+            margin: 5px; align-items: center; margin-bottom: 15px; "><ion-icon name="heart"></ion-icon></b>por
+                <a style="margin-left: 5px;" rel="next" target="_self">
+                    @ersiilva </a></h3>
+                    <h3 id="projeto1">© 2025</h3>
+                </div>
+                <div id="printContent"></div>
+                
+                
+                
+                <script src="script.js"></script>
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            </body>
+            </html>
