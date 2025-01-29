@@ -1,55 +1,96 @@
-function formatWeight(input) {
-    let value = input.value.replace(',', '.'); // Troca vírgula por ponto
-    value = value.replace(/[^0-9.]/g, ''); // Permite apenas números e ponto
+let display = document.getElementById('display');
+let description = document.getElementById('description');
+let currentInput = '';
 
-    const parts = value.split('.');
-    if (parts.length > 2) {
-        value = parts[0] + '.' + parts.slice(1).join('');
+document.addEventListener('keydown', handleKeyboardInput);
+document.getElementById('toggleTheme').addEventListener('click', toggleTheme);
+
+function appendNumber(number) {
+    currentInput += number;
+    updateDisplay();
+}
+
+function appendOperator(operator) {
+    currentInput += ` ${operator} `;
+    updateDisplay();
+}
+
+function calculate() {
+    try {
+        let expression = currentInput.replace(/,/g, '.').replace(/[^-()\d/*+.\s]/g, '');
+        let result = eval(expression);
+
+        currentInput = result.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        updateDisplay();
+    } catch {
+        display.value = 'Error';
     }
-
-    input.value = value; // Mantém o valor digitado sem truncar
 }
 
-// Função para formatar a data
-function formatDate(dateString) {
-    const [year, month, day] = dateString.split('-');
-    return `${day}/${month}/${year}`;
+function clearDisplay() {
+    currentInput = '';
+    updateDisplay();
 }
 
-// Função para gerar e imprimir as informações
-function printInfo() {
-    const productName = document.getElementById('productName').value;
-    const manufactureDate = formatDate(document.getElementById('manufactureDate').value);
-    const expiryDate = formatDate(document.getElementById('expiryDate').value);
-    const productWeight = parseFloat(document.getElementById('productWeight').value || 0).toFixed(3);
+function printResult() {
+    const result = display.value;
+    const descriptionText = description.value;
+    if (result) {
+        const printContent = `\n------PAUD'ARCO------\n\n&nbsp&nbsp&nbsp&nbsp${descriptionText}\n\n&nbsp&nbsp&nbspTOTAL: R$${result}\n\n&nbsp${new Date().toLocaleString('pt-BR')}\n----------------------`;
+        
+        if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+            const printWindow = window.open('', '_blank', 'width=300,height=200');
+            const width = screen.availWidth;
+            const height = screen.availHeight;
+            printWindow.resizeTo(width, height);
+            printWindow.document.write(`<pre>${printContent}</pre>`);
+            printWindow.document.close();
+            printWindow.print();
+            printWindow.close();
+        } else {
+            alert('Impressão diretamente pela web não é suportada no seu navegador.');
+        }
+    }
+}
 
-    const printContent = `
-        <div style="text-align: center;">
-            <h1>88 SMASH</h1>
-        </div>
-        <div style="text-align: center;">   
-            <p><strong></strong> ${productName}</p>
-        </div>
-        <div style="text-align: center;">
-            <p><strong>DATA:</strong> ${manufactureDate}</p>
-        </div>
-        <div style="text-align: center;">   
-            <p><strong>VAL:</strong> ${expiryDate}</p>
-        </div>
-        <div style="text-align: center;">
-            <p><strong>Peso:</strong> ${productWeight} Kg </p>
-        </div>
-        <div style="text-align: center;font-size: 15px;justify-content: center">
-            <p>Deus é Bom!</p>
-        </div>
-    `;
+function handleKeyboardInput(event) {
+    const key = event.key;
+    if (!isNaN(key) || key === ',') {
+        appendNumber(key);
+    } else if (['+', '-', '*', '/'].includes(key)) {
+        appendOperator(key);
+    } else if (key === 'Enter') {
+        calculate();
+    } else if (key === 'Backspace') {
+        currentInput = currentInput.slice(0, -1);
+        updateDisplay();
+    } else if (key === 'Escape') {
+        clearDisplay();
+    } else if (event.ctrlKey && (key === 'p' || key === 'P')) {
+        printResult();
+        event.preventDefault();
+    } else if (event.shiftKey && (key === 'w' || key === 'W')) {
+        clearDescription();
+        event.preventDefault();
+    } else if (event.shiftKey && (key === 'd' || key === 'D')) {
+        selectDescription();
+        event.preventDefault();
+    }
+}
 
-    const printDiv = document.getElementById('printContent');
-    printDiv.innerHTML = printContent;
-    printDiv.style.display = 'block';
+function updateDisplay() {
+    display.value = currentInput;
+    display.scrollLeft = display.scrollWidth; // Garante que o último número digitado esteja visível
+}
 
-    window.print();
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
 
-    // Ocultar novamente após a impressão
-    printDiv.style.display = 'none';
+function clearDescription() {
+    description.value = '';
+}
+
+function selectDescription() {
+    description.focus();
 }
