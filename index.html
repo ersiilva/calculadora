@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/time.css">
     <link rel="shortcut icon" href="img/icons8-calculadora-ios-17-outlined-16.png" type="image/x-icon">
 </head>
 <body>
     <div class="calculator-container">
         <div class="calculator">
-            <button id="toggleTheme"></button>
+            <div class="box-top">
+            <button class="lampada" id="toggleTheme"></button>
+            <div class="time">
+                <div class="relogio-container">
+                    <div class="relogio">
+                        <span class="horario" id="horas">00</span> :
+                        <span class="minutos" id="minutos">00</span>
+                        <!--<span class="segundos" id="segundos">00</span>
+                        <span class="periodo" id="periodo">AM</span> -->
+                    </div>
+                </div>
+            </div>
+            </div>
             <input type="text" id="display" disabled placeholder="Adicione os valores aqui!     " autofocus>
             <div class="buttons">
                 <button onclick="appendNumber('1')">1</button>
@@ -30,7 +43,7 @@
                 <button onclick="calculate()">=</button>
                 <button onclick="clearDisplay()">C</button>
             </div>
-            <textarea id="description" placeholder="Adicione uma descrição para a impressão!" ></textarea>
+            <textarea id="description" type="text" placeholder="Adicione uma descrição para a impressão!" maxlength="300" ></textarea>
             <button onclick="printResult()">Imprimir</button>
             
             <h3 id="projeto">Feito com 
@@ -46,7 +59,8 @@
                  <!--Ctrl + P = Print resultado-->
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/time.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
