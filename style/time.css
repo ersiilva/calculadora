@@ -9,20 +9,32 @@
 }
 
 .relogio {
-    
-    letter-spacing: px;
+    display: flex;
+    letter-spacing: 4px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.img-time img{
+    display: flex;
+    flex-direction: row;
+    margin-right: 3px;
+    filter: brightness(10) contrast(10) invert(100%);
+    width: 18px;
+    height: auto;
 }
 
 .horario {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .minutos {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .segundos {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .periodo {
