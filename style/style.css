@@ -154,11 +154,11 @@ body.dark-mode {
     color: #ffffff;
 }
 body.dark-mode #toggleTheme {
-    background-image: url("..img/apagada.png");
+    background-image: url("../img/apagada.png");
 }
 #toggleTheme {
     width: 50px;
-    background-image: url(".img/acesa.png");
+    background-image: url("../img/acesa.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: rgb(0, 0, 0);
@@ -174,14 +174,14 @@ body.dark-mode {
     transition: background-image 0.5s, color 0.9s;
     background-color: #121212;
     color: #ffffff;
-    background-image: url('img/3.png'); /* imagem para modo escuro */
+    background-image: url('../img/3.png'); /* imagem para modo escuro */
 }
 
 body {
     transition: background-image 0.5s, color 0.9s;
     background-color: #f0f0f0;
     color: #000000;
-    background-image: url('img/4.png'); /* imagem para modo claro */
+    background-image: url('../img/4.png'); /* imagem para modo claro */
     background-size: 150%;
 }
 
