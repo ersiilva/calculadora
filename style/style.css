@@ -4,10 +4,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100vw;
         height: 100vh;
         background-color: #dadada;
-        margin: 0;
-        min-width: 500px;
         background-repeat: no-repeat;
         font-family: "Poppins", sans-serif;
     }
@@ -195,8 +194,8 @@
         justify-content: center;
         align-items: center;
         background-color: #000000;
-        margin: 0;
-        min-width: 500px;
+        margin: 0px;
+        min-width: 0px;
         background-repeat: no-repeat;
         font-family: "Poppins", sans-serif;
     }
