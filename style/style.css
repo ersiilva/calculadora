@@ -125,9 +125,7 @@ button:last-of-type:hover {
     justify-content:space-between;
     align-items: center;
 }
-.lampada {
-    
-}
+
 .time{
     display: flex;
 }
@@ -135,7 +133,7 @@ button:last-of-type:hover {
 /*começo do dark mode*/
 
 body {
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.9s, color 0.9s;
 }
 
 .calculator {
@@ -154,11 +152,11 @@ body.dark-mode {
     color: #ffffff;
 }
 body.dark-mode #toggleTheme {
-    background-image: url("../img/apagada.png");
+    background-image: url("/img/apagada.png");
 }
 #toggleTheme {
     width: 50px;
-    background-image: url("../img/acesa.png");
+    background-image: url("/img/acesa.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: rgb(0, 0, 0);
@@ -171,18 +169,20 @@ body.dark-mode .calculator {
 }
 
 body.dark-mode {
-    transition: background-image 0.5s, color 0.9s;
+    transition: background-image 0.9s, color 0.9s;
     background-color: #121212;
     color: #ffffff;
-    background-image: url('../img/3.png'); /* imagem para modo escuro */
+    background-image: url('/img/dia.jpg'); /* imagem para modo claro */
+    background-size: cover;
 }
 
 body {
-    transition: background-image 0.5s, color 0.9s;
+    transition: background-image 0.9s, color 0.9s;
     background-color: #f0f0f0;
     color: #000000;
-    background-image: url('../img/4.png'); /* imagem para modo claro */
-    background-size: 150%;
+    background-image: url('/img/ceu-noturno-lua.jpg'); /* imagem para modo escuro */
+    background-size: cover;
+    background-position-x: center;
 }
 
 /*NOVO*/
@@ -335,10 +335,6 @@ button:last-of-type {
 }
 
 /*começo do dark mode*/
-
-body {
-    transition: background-color 0.5s, color 0.5s;
-}
 
 .calculator {
     text-align: center;
