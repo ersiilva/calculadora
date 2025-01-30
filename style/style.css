@@ -154,11 +154,11 @@
         color: #ffffff;
     }
     body.dark-mode #toggleTheme {
-        background-image: url("/img/apagada.png");
+        background-image: url("../img/apagada.png");
     }
     #toggleTheme {
         width: 50px;
-        background-image: url("./img/acesa.png");
+        background-image: url("../img/acesa.png");
         background-repeat: no-repeat;
         background-size: 100%;
         background-color: rgb(0, 0, 0);
@@ -174,7 +174,7 @@
         transition: background-image 0.9s, color 0.9s;
         background-color: #121212;
         color: #ffffff;
-        background-image: url('./img/dia.jpg'); /* imagem para modo claro */
+        background-image: url('../img/dia.jpg'); /* imagem para modo claro */
         background-size: cover;
         background-position-x: center;
     }
@@ -183,7 +183,7 @@
         transition: background-image 0.9s, color 0.9s;
         background-color: #f0f0f0;
         color: #000000;
-        background-image: url('/img/ceu-noturno-lua.jpg'); /* imagem para modo escuro */
+        background-image: url('../img/ceu-noturno-lua.jpg'); /* imagem para modo escuro */
         background-size: cover;
         background-position-x: center;
     }
